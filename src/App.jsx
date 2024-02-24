@@ -23,15 +23,16 @@ function App() {
   };
 
   return (
-    <div>
-      <AppBar position="static">
+    <div style={{ backgroundColor: "#F0FFFF", minHeight: "100vh" }}>
+      <AppBar position="static" sx={{ backgroundColor: "#008080" }}>
         <Toolbar>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             Mi Explorador de Repositorios
           </Typography>
         </Toolbar>
       </AppBar>
-      <Container maxWidth="sm" sx={{ marginTop: "20px" }}>
+
+      <Container maxWidth="sm" sx={{ marginTop: "20px", padding: "20px", backgroundColor: "#C0C0C0" }}>
         <form onSubmit={handleFormSubmit}>
           <TextField
             label="Nombre de Usuario"
@@ -41,9 +42,10 @@ function App() {
             fullWidth
             sx={{ marginBottom: "10px" }}
           />
-          <Button type="submit" variant="contained" fullWidth>
+          <Button type="submit" variant="contained" fullWidth sx={{ marginTop: "10px", backgroundColor: "#5F9EA0" }}>
             Buscar Repositorios
           </Button>
+
         </form>
         {showRepoList && <RepoList username={username} />}
       </Container>
