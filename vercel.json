@@ -1,0 +1,13 @@
+{
+    "version": 2,
+    "builds": [
+      {
+        "src": "explorador-de-repositorios-de-github-grupo03",
+        "use": "@vercel/node"
+      }
+    ],
+    "routes": [
+      { "handle": "vercel" }
+    ]
+  }
+  
