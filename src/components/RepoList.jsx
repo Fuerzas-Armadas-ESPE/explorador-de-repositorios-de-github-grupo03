@@ -24,17 +24,21 @@ const RepoList = ({ username }) => {
 
   return (
     <div>
-      <h2>Top 5 repositorios con más participación de {username}</h2>
-      <ul>
-        {repos.map((repo) => (
-          <li key={repo.id}>
-            {repo.name} - Tamaño: {repo.size}
-          </li>
-        ))}
-      </ul>
+      <h2 style={{ color: "#008080" }}>Top 5 repositorios con más participación de {username}</h2>
+      {repos.length > 0 ? (
+        <ul style={{ listStyleType: "none", padding: 0 }}>
+          {repos.map((repo) => (
+            <li key={repo.id} style={{ marginBottom: "10px", border: "1px solid #ccc", padding: "10px", borderRadius: "5px" }}>
+              <strong>{repo.name}</strong> - Tamaño: {repo.size}
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <p>No se encontraron repositorios para el usuario {username}. Vuelva a intentarlo, por favor.</p>
+      )}
     </div>
   );
-};
+      };  
 
 RepoList.propTypes = {
   username: PropTypes.string.isRequired,
